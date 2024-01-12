@@ -25,8 +25,14 @@
         </nav>
     </header>
     <?php
-        include_once "../Controlador/ControlaMostrarAll.php";
-        $array = mostrarTodos();
+    include_once "../Controlador/ControlaRol.php";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Obtener el rol seleccionado del formulario
+            $rolSeleccionado = isset($_POST["rolSeleccionado"]) ? $_POST["rolSeleccionado"] : null;
+        }
+
+        $array = filtrarRol($rolSeleccionado);
+
         if ($array) {
             echo "<table border='1'>
                     <tr>
@@ -52,7 +58,9 @@
         } else {
             echo "No hay campeones disponibles.";
         }
+
     ?>
+
 
 
 

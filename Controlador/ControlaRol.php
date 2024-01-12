@@ -7,4 +7,10 @@
         return $array_campeones;
     }
 
+    function sacarRoles(){
+        $array_roles = CampeonBD::getAllRoles();
+
+        return $array_roles;
+    }
+
 ?>

@@ -23,29 +23,7 @@
                 <li><a href="manipularCampeon.php">Manipular Campeon</a></li>
             </ul>
         </nav>
-
     </header>
-    <form method="post" action="procesamientoRoles.php">
-    <div id="search">
-        <select name="rolSeleccionado">
-            <?php
-                include_once "../Controlador/ControlaRol.php";
-                // Llamamos a la función para obtener todos los roles
-                $roles = sacarRoles();
-
-                if ($roles) {
-                    foreach ($roles as $rol) {
-                        echo "<option value=\"$rol\">$rol</option>";
-                    }
-                } else {
-                    echo "<option value=\"\">No hay roles disponibles</option>";
-                }
-            ?>
-        </select>
-        <button type="submit">Buscar</button>
-    </div>
-</form>
-
 
 
 

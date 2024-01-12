@@ -15,7 +15,8 @@
         $campeon->setDescripcion($descripcion);
         
         if (CampeonBD::addCampeon($campeon)){
-            echo "<br>Registro insertado correctamente";
+            header("Location:../Vistas/mostrarCampeones.php");
+            exit();
         }
         else {
             echo "<br>Ha ocurrido un error.";

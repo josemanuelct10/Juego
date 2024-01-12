@@ -66,6 +66,48 @@
 
             return $sentencia->fetchAll();
         }
+
+        public static function getAllRoles(){
+            include_once "../Conexion/conexion.php";
+            $result = false;
+        
+            // Establecemos conexión con la base de datos
+            $conexion = Conexion::obtenerConexion();
+        
+            // Preparamos la consulta SQL
+            $sql = "SELECT DISTINCT rol FROM campeon";
+        
+            $sentencia = $conexion->prepare($sql);
+        
+            $result = $sentencia->execute();
+            return $sentencia->fetchAll(PDO::FETCH_COLUMN);
+        }
+
+        public static function buscarCampeonPorNombre($nombre) {
+            include_once "../Conexion/conexion.php";
+            $result = false;
+        
+            // Establecemos conexión con la base de datos
+            $conexion = Conexion::obtenerConexion();
+        
+            // Preparamos la consulta SQL
+            $sql = "SELECT * FROM campeon WHERE nombre LIKE :nombre";
+        
+            $sentencia = $conexion->prepare($sql);
+        
+            // Utilizamos la cláusula LIKE para buscar nombres que contengan el valor proporcionado
+            ;
+            $sentencia->bindParam(":nombre", $nombre);
+        
+            $result = $sentencia->execute();
+            
+            // Establecemos el modo de obtención de resultados como objetos de la clase Campeon
+            $sentencia->setFetchMode(PDO::FETCH_CLASS, "Campeon");
+        
+            return $sentencia->fetchAll();
+        }
+        
+        
     }
 
 ?>
