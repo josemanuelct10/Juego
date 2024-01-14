@@ -104,8 +104,52 @@
             // Establecemos el modo de obtención de resultados como objetos de la clase Campeon
             $sentencia->setFetchMode(PDO::FETCH_CLASS, "Campeon");
         
-            return $sentencia->fetchAll();
+            return $sentencia->fetch();
         }
+
+        public static function eliminarCampeonPorNombre($nombre) {
+            include_once "../Conexion/conexion.php";
+            
+            // Establecemos conexión con la base de datos
+            $conexion = Conexion::obtenerConexion();
+            
+            // Preparamos la consulta SQL para eliminar el campeón por nombre
+            $sql = "DELETE FROM campeon WHERE nombre = :nombre";
+            
+            $sentencia = $conexion->prepare($sql);
+            
+            // Asociamos el parámetro :nombre con el valor proporcionado
+            $sentencia->bindParam(":nombre", $nombre);
+            
+            // Ejecutamos la consulta
+            return $sentencia->execute();
+        }
+
+        
+        public static function editarCampeon($nombre, $nuevoNombre, $rol, $dificultad, $descripcion) {
+            include_once "../Conexion/conexion.php";
+            
+            // Establecemos conexión con la base de datos
+            $conexion = Conexion::obtenerConexion();
+            
+            // Preparamos la consulta SQL para actualizar los datos del campeón
+            $sql = "UPDATE campeon SET nombre = :nuevoNombre, rol = :rol, dificultad = :dificultad, descripcion = :descripcion WHERE nombre = :nombre";
+            
+            $sentencia = $conexion->prepare($sql);
+            
+            // Asociamos los parámetros con los valores proporcionados
+            $sentencia->bindParam(":nombre", $nombre);
+            $sentencia->bindParam(":nuevoNombre", $nuevoNombre);
+            $sentencia->bindParam(":rol", $rol);
+            $sentencia->bindParam(":dificultad", $dificultad);
+            $sentencia->bindParam(":descripcion", $descripcion);
+            
+            // Ejecutamos la consulta
+            return $sentencia->execute();
+        }
+        
+
+
         
         
     }

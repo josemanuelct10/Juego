@@ -31,7 +31,6 @@
             $rolSeleccionado = isset($_POST["rolSeleccionado"]) ? $_POST["rolSeleccionado"] : null;
         }
 
-        $array = filtrarRol($rolSeleccionado);
 
         if ($array) {
             echo "<table border='1'>

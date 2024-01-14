@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +24,14 @@
         </nav>
     </header>
 
+    <section>
+        <form action="procesamientoCampeones.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
 
     <footer>
     </footer>
