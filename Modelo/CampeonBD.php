@@ -147,11 +147,6 @@
             // Ejecutamos la consulta
             return $sentencia->execute();
         }
-        
-
-
-        
-        
     }
 
 ?>

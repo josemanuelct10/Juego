@@ -19,7 +19,7 @@
                 <li><a href="mostrarCampeones.php">Mostrar Campeones</a></li>
                 <li><a href="filtrarRol.php">Filtrar Rol</a></li>
                 <li><a href="formInserta.php">Insertar Campeon</a></li>
-                <li><a href="manipularCampeon.php">Manipular Campeon</a></li>
+                <li><a href="formManipular.php">Manipular Campeon</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Buscar">
         </form>
     </section>
 

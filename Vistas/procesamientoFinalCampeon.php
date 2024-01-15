@@ -7,8 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dificultad = isset($_POST['dificultad']) ? $_POST['dificultad'] : null;
     $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
 
-    $campeon = filtrarNombre($nombre);
-    $nombreAntiguo = $campeon->getNombre();
+    $nombreAntiguo = isset($_POST['nombreAntiguo']) ? $_POST['nombreAntiguo'] : null;
 
     if (isset($_POST['actualizar'])) {
         editarCampeon($nombreAntiguo, $nombre, $rol, $dificultad, $descripcion);

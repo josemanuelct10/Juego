@@ -19,7 +19,7 @@
                 <li><a href="mostrarCampeones.php">Mostrar Campeones</a></li>
                 <li><a href="filtrarRol.php">Filtrar Rol</a></li>
                 <li><a href="formInserta.php">Insertar Campeon</a></li>
-                <li><a href="manipularCampeon.php">Manipular Campeon</a></li>
+                <li><a href="formManipular.php">Manipular Campeon</a></li>
             </ul>
         </nav>
     </header>
@@ -32,8 +32,9 @@
     }
     ?>
 
-<form action="procesarEdicionCampeon.php" method="post">            
+<form action="procesamientoFinalCampeon.php" method="post">            
             <label for="nombre">Nombre:</label>
+            <input type="hidden" name="nombreAntiguo" value="<?php echo $campeon->getNombre(); ?>">
             <input type="text" id="nombre" name="nombre" value="<?php echo $campeon->getNombre(); ?>" required>
 
             <label for="rol">Rol:</label>

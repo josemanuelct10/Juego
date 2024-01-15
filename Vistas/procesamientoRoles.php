@@ -20,7 +20,7 @@
                 <li><a href="mostrarCampeones.php">Mostrar Campeones</a></li>
                 <li><a href="filtrarRol.php">Filtrar Rol</a></li>
                 <li><a href="formInserta.php">Insertar Campeon</a></li>
-                <li><a href="manipularCampeon.php">Manipular Campeon</a></li>
+                <li><a href="formManipular.php">Manipular Campeon</a></li>
             </ul>
         </nav>
     </header>
@@ -30,6 +30,7 @@
             // Obtener el rol seleccionado del formulario
             $rolSeleccionado = isset($_POST["rolSeleccionado"]) ? $_POST["rolSeleccionado"] : null;
         }
+        $array = filtrarRol($rolSeleccionado);
 
 
         if ($array) {

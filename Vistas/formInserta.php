@@ -19,7 +19,7 @@
                 <li><a href="mostrarCampeones.php">Mostrar Campeones</a></li>
                 <li><a href="filtrarRol.php">Filtrar Rol</a></li>
                 <li><a href="formInserta.php">Insertar Campeon</a></li>
-                <li><a href="manipularCampeon.php">Manipular Campeon</a></li>
+                <li><a href="formManipular.php">Manipular Campeon</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,7 @@
         Rol: <input type="text" id="rol" name="rol" placeholder="Rol" required><br><br>
         Dificultad: <input type="text" id="dificultad" name="dificultad" placeholder="Dificultad" required><br><br>
         Descripcion: <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" required><br><br>
-        <input type="submit" name="enviar">
+        <input type="submit" name="enviar" value="Insertar">
     </form>
     <footer>
     </footer>
