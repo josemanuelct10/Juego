@@ -32,7 +32,7 @@
     }
     ?>
 
-<form action="procesamientoFinalCampeon.php" method="post">            
+<form action="../Controlador/procesamientoFinalCampeon.php" method="post">            
             <label for="nombre">Nombre:</label>
             <input type="hidden" name="nombreAntiguo" value="<?php echo $campeon->getNombre(); ?>">
             <input type="text" id="nombre" name="nombre" value="<?php echo $campeon->getNombre(); ?>" required>

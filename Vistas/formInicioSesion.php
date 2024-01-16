@@ -18,10 +18,18 @@
 
     </header>
 
-    <form action="../Controlador/ControlaInicio.php" method="POST">
-    <input type="submit" value="Iniciar Sesion" name="accion" />
-    <input type="submit" value="Registrarse" name="accion" />
-   </form>
+    <form action="../Controlador/gestionaInicioSesion.php" method="POST">
+
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="pwd" required><br>
+
+        <button type="submit">Iniciar Sesion</button>
+    </form>
+
 
 
     <footer>
